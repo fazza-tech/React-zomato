@@ -1,15 +1,4 @@
-// * Props :
-
-// * prop -> is Just a JS Object
-
-// * Note: When you have to dainamically pass in a data to a component, you pass in prop
-
-// const RestaurantCard = (props) => {
-// console.log(props);
-
-// * Note We can also destructure props on the fly by wrapping them in between {}, this is like...
-
-// * const { resName, cuisine } = props;
+import {CLOUDINARY_IMAGE} from '../utils/constants'
 
 // const RestaurantCard = ({ resName, cuisine }) => {
 //   console.log({ resName, cuisine });
@@ -40,7 +29,7 @@ const RestaurantCard = (props) => {
           // }
   
           src={
-            'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/' +
+            CLOUDINARY_IMAGE +
             cloudinaryImageId
           }
           alt="Biryani"

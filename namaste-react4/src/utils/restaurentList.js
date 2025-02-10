@@ -198,7 +198,7 @@ export const resList = [
                         "Fast Food",
                         "Desserts"
                       ],
-                      "avgRating": 4.3,
+                      "avgRating": 3.9,
                       "veg": true,
                       "parentId": "101802",
                       "avgRatingString": "4.3",
@@ -297,7 +297,7 @@ export const resList = [
                         "Fast Food",
                         "Desserts"
                       ],
-                      "avgRating": 4.1,
+                      "avgRating": 3.9,
                       "parentId": "395453",
                       "avgRatingString": "4.1",
                       "totalRatingsString": "305",
@@ -1511,7 +1511,7 @@ export const resList = [
                         "Fast Food",
                         "Desserts"
                       ],
-                      "avgRating": 4.3,
+                      "avgRating": 3.9,
                       "veg": true,
                       "parentId": "101802",
                       "avgRatingString": "4.3",

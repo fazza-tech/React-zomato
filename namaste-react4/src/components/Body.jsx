@@ -15,6 +15,16 @@ const Body = () => {
           <input type="text" placeholder="Search Food or Restaurant" />
           <button>Search</button>
         </div>
+        <div className='filter'>
+            <button className='filter-btn' 
+                    onClick={() => {
+                      const filteredRes = resList.filter(res => res.info.avgRating > 4);
+                      console.log(filteredRes); // Just logs the filtered list
+                    }}>
+              Top rated Restaurents
+              </button>
+
+        </div>
         <div className="res-container">
   
           {/* // * looping through the <RestaurentCard /> components Using Array.map() method */}
