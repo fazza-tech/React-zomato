@@ -945,7 +945,7 @@ export const resList = [
                   },
                   {
                     "info": {
-                      "id": "151648",
+                      "id": "1516488",
                       "name": "Mr. Gurung Momo & Chinese Corner",
                       "cloudinaryImageId": "h7oibtpm7kqks8cqz3gh",
                       "locality": "Teacher's Colony",
@@ -1059,7 +1059,7 @@ export const resList = [
                   },
                   {
                     "info": {
-                      "id": "151656",
+                      "id": "1516568",
                       "name": "Dev International",
                       "cloudinaryImageId": "enj3srsnhbltbom2ovvh",
                       "locality": "khajri road",
@@ -1497,7 +1497,7 @@ export const resList = [
                   },
                   {
                     "info": {
-                      "id": "151649",
+                      "id": "1516498",
                       "name": "Hotel Sai Nath & Sai Restaurant",
                       "cloudinaryImageId": "vkhcohhmqfczycw9vsar",
                       "locality": "railway station",
