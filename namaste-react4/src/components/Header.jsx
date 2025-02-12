@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import swiggyLogo from '../img/swiggy-logo.svg';
 
 const Header = () => {
+
+  const [loginButton, setLoginButton] = useState(false)
+  console.log("hedader rendered")
+  console.log(loginButton)
     return (
       <div className="header">
         <div className="logo-container">
@@ -16,6 +21,7 @@ const Header = () => {
             <li>About Us</li>
             <li>Contact Us</li>
             <li>Cart</li>
+            <button className='login' onClick={()=>setLoginButton(!loginButton)}>{loginButton?"login":"logout"}</button>
           </ul>
         </div>
       </div>
