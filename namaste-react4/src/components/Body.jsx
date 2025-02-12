@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import {resList} from '../utils/restaurentList'
 import RestaurantCard from './RestaurentCard';
+import Shimmer from './Shimmer';
 
 
 const Body = () => {
@@ -19,24 +19,20 @@ const Body = () => {
 
     }
 
-    if(restaurantList.length === 0){
-      return <h1>loading...</h1>
-    }
+    //conditional rendering 
+    // if(restaurantList.length === 0){
+    //   return <Shimmer/>
+    // }
 
-    
-    
 
     const cardMaping = restaurantList.map((restaurant) => (
       <RestaurantCard 
       key={restaurant.info.id} 
       resData={restaurant} />
     ))
-    return (
+    return restaurantList.length===0?<Shimmer/> : (
       <div className="body">
-        <div className="search-container">
-          <input type="text" placeholder="Search Food or Restaurant" />
-          <button>Search</button>
-        </div>
+        
         <div className='filter'>
             <button className='filter-btn' 
                     onClick={() => {
