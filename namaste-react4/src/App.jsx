@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
+import About from './components/About';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 /* Components of Our Food-Order App
  * Header
@@ -22,11 +24,16 @@ import Footer from './components/Footer';
 
 function App  () {
   return (
-    <div className="app">
-      <Header />
-      <Body />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 

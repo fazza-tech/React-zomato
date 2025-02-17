@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import swiggyLogo from '../img/swiggy-logo.svg';
+
+
+
 
 const Header = () => {
 
+  
   const [loginButton, setLoginButton] = useState(false)
+
+  useEffect(() => {
+    console.log("useEffect is called")
+  }, [])
+
+  
   console.log("hedader rendered")
   console.log(loginButton)
     return (
