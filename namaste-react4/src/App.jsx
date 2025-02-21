@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
 import About from './components/About';
+import Contact from './components/Contact';
+import Error from './components/Error'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 /* Components of Our Food-Order App
@@ -30,6 +32,8 @@ function App  () {
         <Routes>
           <Route path="/" element={<Body />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element ={<Contact />} />
+          <Route path="*" element={<Error />} /> 
         </Routes>
         <Footer />
       </div>
