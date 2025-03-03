@@ -35,7 +35,7 @@ function App  () {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element ={<Contact />} />
           <Route path="*" element={<Error />} /> 
-          <Route path="/restaurents/:resId" element = {<RestroMenu/>} />
+          <Route path="/restaurants/:resId" element = {<RestroMenu/>} />
         </Routes>
         <Footer />
       </div>

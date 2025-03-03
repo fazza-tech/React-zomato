@@ -1,3 +1,6 @@
+import User from "./User"
+import UserClass from "./UserClass"
+
 const About = () => {
     return(
         <>
@@ -6,6 +9,17 @@ const About = () => {
             <li>About us</li>
             <li>career</li>
         </ul>
+        <User
+            name={"Fasal Mammasrayil"}
+            place={"Sulthan Bathery"}
+            number={"989599 8571"}
+        />
+
+        <UserClass
+        name={"Fasal Mammasrayillakath"}
+        place={"Sulthan Bathery"}
+        number={"989599 8571"}
+        />
     
     </>
     )
