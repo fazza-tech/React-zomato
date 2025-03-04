@@ -1,32 +1,28 @@
-import { useState, useEffect } from "react"
+
 import Shimmer from "./Shimmer";
-import { RESTRO_INFO } from "../utils/constants";
+import useRestroMenu from "../utils/useRestroMenu";
 import {useParams} from "react-router-dom"
 
 const RestroMenu = () => {
 
-    const [resInfo , setResInfo] = useState(null)
 
     const {resId} = useParams()
-    console.log(resId)
 
-    useEffect(() => {
-        fetchMenu() 
-    },[])
-
-    const fetchMenu = async () => {
-        const data = await fetch(RESTRO_INFO+resId);
-        const json = await data.json()
-
-        setResInfo(json.data)
-    }
+    const resInfo = useRestroMenu(resId)    
     if(resInfo === null) return <Shimmer/>
 
     const {name , cuisines,costForTwoMessage} = resInfo?.cards[2]?.card?.card?.info || {};
 
-    const itemCard = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[1]?.card?.card?.itemCards || {};
+    const regularCards = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards || [];
 
-    console.log(itemCard)
+    const selectedCard = (regularCards?.[1]?.card?.card?.itemCards?.length >= 3)
+        ? regularCards?.[1]  // ✅ Use cards[1] if it has 3 or more items
+        : regularCards?.[3];  // ✅ Otherwise, switch to cards[3]
+    
+    const itemCard = selectedCard?.card?.card?.itemCards || [];
+    
+
+    
 
     return (
         <div className="menu">
