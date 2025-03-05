@@ -1,12 +1,13 @@
-import React from 'react';
+import React ,{lazy,Suspense} from 'react';
 import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
-import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RestroMenu from './components/RestoMenu';
+import Shimmer from './components/Shimmer';
+
 
 /* Components of Our Food-Order App
  * Header
@@ -25,6 +26,9 @@ import RestroMenu from './components/RestoMenu';
  * - Contact
  */
 
+const Grocery = lazy(() => import('./components/Grocery'))
+const About = lazy(() => import('./components/About'))
+
 function App  () {
   return (
     <BrowserRouter>
@@ -32,8 +36,9 @@ function App  () {
         <Header />
         <Routes>
           <Route path="/" element={<Body />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<Suspense fallback={<Shimmer/>}><About /></Suspense>} />
           <Route path="/contact" element ={<Contact />} />
+          <Route path="/grocery" element={<Suspense fallback={<Shimmer/>}><Grocery/></Suspense>}/>
           <Route path="*" element={<Error />} /> 
           <Route path="/restaurants/:resId" element = {<RestroMenu/>} />
         </Routes>

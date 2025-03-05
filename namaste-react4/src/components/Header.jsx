@@ -6,6 +6,7 @@ import useOnlineStatus from '../utils/useOnlineStatus';
 
 
 
+
 const Header = () => {
   const [loginButton, setLoginButton] = useState(false)
   const onlineStatus = useOnlineStatus()
@@ -28,6 +29,7 @@ const Header = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/grocery">Grocery</Link></li>
             <li>Cart</li>
             <button className='login' onClick={()=>setLoginButton(!loginButton)}>{loginButton?"login":"logout"}</button>
           </ul>
