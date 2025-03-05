@@ -1,18 +1,14 @@
 import { useEffect, useState } from 'react';
 import swiggyLogo from '../img/swiggy-logo.svg';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 
 
 
 const Header = () => {
-
-  
   const [loginButton, setLoginButton] = useState(false)
-
-  useEffect(() => {
-    console.log("useEffect is called")
-  }, [])
+  const onlineStatus = useOnlineStatus()
 
   
   console.log("hedader rendered")
@@ -28,6 +24,7 @@ const Header = () => {
         </div>
         <div className="nav-items">
           <ul>
+            <li>Online status:{onlineStatus?"🟢":"🔴"} </li>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
